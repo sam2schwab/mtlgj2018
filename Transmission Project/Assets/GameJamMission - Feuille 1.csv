@@ -1,0 +1,5 @@
+QuestID,Class01,Class02,Class03,Class04,Class05,Class06,Class07,Class08,Power
+1,Knight,Ranger,Mage,Thief,Knight,Ranger,Mage,Thief,12
+2,Knight,Knight,Mage,Thief,Thief,Thief,,,15
+3,Knight,Knight,Knight,Ranger,Ranger,,,,11
+4,Knight,Mage,Mage,Mage,Mage,Mage,,,18
