@@ -57,7 +57,7 @@ public class Quests : MonoBehaviour
     {
 
     }
-    public void AssignHero(int power)
+    public void AssignHero(Types t, int power)
     {
         if (difficulty >= power)
         {
@@ -66,6 +66,15 @@ public class Quests : MonoBehaviour
         else
             difficulty = 0;
         difficultyText.text = DIFFICULTY_BASE_TEXT + difficulty.ToString();
+        for (int i = 0; i < types.Length; i++)
+        {
+            if (t == types[i] || types[i] == Types.any)
+            {
+                types[i] = Types.filled;
+                GameObject go = Instantiate(checkmark, classes[i].transform) as GameObject;
+                go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y, go.transform.position.z - 0.1f);
+            }
+        }
     }
 
     public bool ValidateType(Types t)
@@ -74,10 +83,6 @@ public class Quests : MonoBehaviour
         {
             if (t == types[i] || types[i] == Types.any)
             {
-                types[i] = Types.filled;
-                Instantiate(checkmark, classes[i].transform);
-              //  classes[i].GetComponent<SpriteRenderer>().color = Color.green;
-                //classes[i].GetComponent<SpriteRenderer>().enabled = false;
                 return true;
             }
         }
