@@ -11,6 +11,7 @@ public class MovingPlayer : MonoBehaviour {
     private Vector3 dest;
     private Vector3 movement;
     private float startTime;
+    private int currentCost;
 
 	// Use this for initialization
 	void Start () {
@@ -33,12 +34,14 @@ public class MovingPlayer : MonoBehaviour {
             {
                 position = dest; //1 or larger means we reached the end
                 moving = false;
+                FindObjectOfType<GameManager>().AddTimeElapsed(currentCost);
+                UpdateAllCosts();
             }
             transform.position = position;
         }
 	}
 
-    public void MoveTo(Vector3 destination)
+    public void MoveTo(Vector3 destination, int cost)
     {
         if (!moving)
         {
@@ -46,6 +49,18 @@ public class MovingPlayer : MonoBehaviour {
             startTime = Time.time;
             dest = destination;
             movement = destination - transform.position;
+            currentCost = cost;
+        }
+
+    }
+
+    private void UpdateAllCosts()
+    {
+        GameObject[] destinations = GameObject.FindGameObjectsWithTag("Destination");
+
+        foreach (GameObject dest in destinations)
+        {
+            dest.GetComponent<Selectable>().UpdateCost();
         }
     }
 }
