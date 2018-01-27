@@ -7,6 +7,7 @@ public class Manager : MonoBehaviour {
     public int resources;
     public int startingResources = 3;
     public Text text;
+    public int nbOfHeroes = 0;
 	// Use this for initialization
 	void Start () {
         resources = startingResources;
