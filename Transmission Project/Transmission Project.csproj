@@ -282,10 +282,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\ClickAndDrag.cs" />
+    <Compile Include="Assets\_Scripts\ClickAndDragButton.cs" />
+    <Compile Include="Assets\_Scripts\DragCard.cs" />
     <Compile Include="Assets\_Scripts\Loader.cs" />
+    <Compile Include="Assets\_Scripts\Manager.cs" />
     <Compile Include="Assets\_Scripts\MovingPlayer.cs" />
+    <Compile Include="Assets\_Scripts\Quests.cs" />
     <Compile Include="Assets\_Scripts\Selectable.cs" />
+    <Compile Include="Assets\_Scripts\TavernOnMap.cs" />
     <Compile Include="Assets\GameManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
