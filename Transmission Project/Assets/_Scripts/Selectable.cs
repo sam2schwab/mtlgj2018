@@ -5,12 +5,13 @@ using UnityEngine;
 public class Selectable : MonoBehaviour {
 
     GameObject player;
-
+    private int cost;
 
 	// Use this for initialization
 	void Start () {
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
+        UpdateCost();
 	}
 	
 	// Update is called once per frame
@@ -30,6 +31,21 @@ public class Selectable : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        player.GetComponent<MovingPlayer>().MoveTo(transform.position);
+        player.GetComponent<MovingPlayer>().MoveTo(transform.position, cost);
+    }
+
+    private int CalculateCost()
+    {
+        return (int)Mathf.Round((transform.position - player.transform.position).magnitude * 8);
+    }
+
+    public void UpdateCost()
+    {
+        cost = CalculateCost();
+        TextMesh display = GetComponentInChildren<TextMesh>();
+        if (display != null)
+        {
+            display.text = "Cost : " + cost;
+        }
     }
 }
