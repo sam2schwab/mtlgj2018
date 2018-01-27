@@ -45,15 +45,15 @@ public class DragCard : MonoBehaviour
             {
                 isSelected = false;
 
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,100,LayerMask.GetMask("Quests"));
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, LayerMask.GetMask("Quests"));
 
                 if (hit.collider != null)
-                {   
+                {
                     Quests quest = hit.transform.gameObject.GetComponent<Quests>();
                     if (quest.ValidateType(type) && manager.ValidateCost(cost))
                     {
                         manager.PayCost(cost);
-                        quest.AssignHero(type, power);
+                        quest.AssignHero(power);
                         Destroy(this.gameObject);
                     }
                 }
