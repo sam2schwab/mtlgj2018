@@ -10,7 +10,7 @@ public enum Types
     thief,
     mage,
     any,
-    filled
+    filled,
 }
 
 public class DragCard : MonoBehaviour
@@ -23,15 +23,41 @@ public class DragCard : MonoBehaviour
     Manager manager;
     TextMesh powerText;
     TextMesh costText;
+
+    public Sprite spriteBow;
+    public Sprite spriteSword;
+    public Sprite spriteDagger;
+    public Sprite spriteHat;
+    public Sprite spriteEmpty;
+
     // Use this for initialization
     void Start()
     {
         originalPosition = transform.position;
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
-        powerText = this.transform.GetChild(0).gameObject.GetComponent<TextMesh>();
-        costText = this.transform.GetChild(1).gameObject.GetComponent<TextMesh>();
+        powerText = transform.GetChild(0).gameObject.GetComponent<TextMesh>();
+        costText = transform.GetChild(1).gameObject.GetComponent<TextMesh>();
         powerText.text = "Power: " + power.ToString();
         costText.text = "Cost: " + cost.ToString();
+
+        Sprite toAssign = spriteEmpty;
+        switch (type)
+        {
+            case Types.knight:
+                toAssign = spriteSword;
+                break;
+            case Types.ranger:
+                toAssign = spriteBow;
+                break;
+            case Types.thief:
+                toAssign = spriteDagger;
+                break;
+            case Types.mage:
+                toAssign = spriteHat;
+                break;
+        }
+        transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>().sprite = toAssign;
+        Debug.Log(type.ToString());
     }
 
     // Update is called once per frame
@@ -53,8 +79,12 @@ public class DragCard : MonoBehaviour
                     if (quest.ValidateType(type) && manager.ValidateCost(cost))
                     {
                         manager.PayCost(cost);
-                        quest.AssignHero(power);
+                        quest.AssignHero(type, power);
                         Destroy(this.gameObject);
+                    }
+                    else
+                    {
+                        transform.position = originalPosition;
                     }
                 }
 
