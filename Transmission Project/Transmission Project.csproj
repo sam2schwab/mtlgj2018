@@ -283,6 +283,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\ClickAndDragButton.cs" />
+    <Compile Include="Assets\_Scripts\DataModal.cs" />
     <Compile Include="Assets\_Scripts\DragCard.cs" />
     <Compile Include="Assets\_Scripts\Loader.cs" />
     <Compile Include="Assets\_Scripts\Manager.cs" />
