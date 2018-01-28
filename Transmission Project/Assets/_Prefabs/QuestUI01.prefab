@@ -940,10 +940,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   types: 00000000
-  spriteBow: {fileID: 21300000, guid: 157a58427ef928145ac1403f55a5b9b6, type: 3}
-  spriteSword: {fileID: 21300000, guid: 8f4fb068d6e2706488590ddfec4ad8b6, type: 3}
-  spriteDagger: {fileID: 21300000, guid: f6823d990f6c6a1478b25f1bb22e9279, type: 3}
-  spriteHat: {fileID: 21300000, guid: bb372e33068bd8d4fa869ecb37bdce8a, type: 3}
+  spriteBow: {fileID: 21300000, guid: 4867ed79626c29946a229359787e097d, type: 3}
+  spriteSword: {fileID: 21300000, guid: 7d35c71e335cdf44cb91a67d888d42a3, type: 3}
+  spriteDagger: {fileID: 21300000, guid: 2ba9e6fb5b7014743b71867a862403dd, type: 3}
+  spriteHat: {fileID: 21300000, guid: 026270fb59f4d5e4990aef170224b94e, type: 3}
   spriteEmpty: {fileID: 21300000, guid: 14a3a2aae18da0d44af717591cc0cf1c, type: 3}
   checkmark: {fileID: 21300000, guid: 1706d6f391236834791d8e5548ad9da8, type: 3}
   classes:
@@ -966,7 +966,6 @@ MonoBehaviour:
   - {fileID: 1803004776472672}
   difficulty: 10
   difficultyText: {fileID: 114921802651218378}
-  timeText: {fileID: 0}
   rewardText: {fileID: 114712592191872578}
   penaltyText: {fileID: 114678551069389886}
 --- !u!114 &114820699751298796

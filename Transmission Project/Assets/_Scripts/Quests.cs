@@ -20,7 +20,6 @@ public class Quests : MonoBehaviour
     public int difficulty;
 
     public Text difficultyText;
-    public Text timeText;
     public Text rewardText;
     public Text penaltyText;
 

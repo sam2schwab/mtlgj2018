@@ -2946,7 +2946,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1663064754}
-  - component: {fileID: 1663064755}
   - component: {fileID: 1663064756}
   m_Layer: 0
   m_Name: Manager
@@ -2968,17 +2967,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1663064755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1663064753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258dad1284dec784ca4ac3c9bf59a446, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1663064756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2994,6 +2982,21 @@ MonoBehaviour:
   startingResources: 3
   text: {fileID: 980116690}
   nbOfHeroes: 3
+  missions:
+  - types: 000000000000000000000000000000000000000000000000
+    difficulty: 10
+    reward: 0
+    penalty: 0
+  - types: 030000000200000004000000
+    difficulty: 4
+    reward: 0
+    penalty: 0
+  quests:
+  - {fileID: 133547613}
+  - {fileID: 1364037864}
+  - {fileID: 443119443}
+  - {fileID: 741156365}
+  - {fileID: 1923536445}
 --- !u!1001 &1681476795
 Prefab:
   m_ObjectHideFlags: 0
