@@ -5,7 +5,7 @@ using UnityEngine;
 public class Selectable : MonoBehaviour {
 
     GameObject player;
-    private int cost;
+    public int Cost { get; private set; }
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +31,7 @@ public class Selectable : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        player.GetComponent<MovingPlayer>().MoveTo(transform.position, cost);
+        player.GetComponent<MovingPlayer>().MoveTo(this);
     }
 
     private int CalculateCost()
@@ -41,11 +41,11 @@ public class Selectable : MonoBehaviour {
 
     public void UpdateCost()
     {
-        cost = CalculateCost();
+        Cost = CalculateCost();
         TextMesh display = GetComponentInChildren<TextMesh>();
         if (display != null)
         {
-            display.text = "Cost : " + cost;
+            display.text = "Cost : " + Cost;
         }
     }
 }

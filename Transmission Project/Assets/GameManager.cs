@@ -7,9 +7,20 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
+    private GameObject dataModel;
+
+    public TavernOnMap tavernPrefab;
+
+    private List<TavernOnMap> taverns;
 
     public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
     public int TimeElapsed { get; private set; }
+    public TavernOnMap currentTavern;
+
+    //to save state
+    public Dictionary<int,List<Hero>> tavernHeroes;
+    public Dictionary<int, bool> tavernRevealed;
+    public Vector3 posHerald;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -35,11 +46,31 @@ public class GameManager : MonoBehaviour
         InitGame();
     }
 
+    internal void EnterTavern(Selectable tavern)
+    {
+        AddTimeElapsed(tavern.Cost);
+        currentTavern = tavern.GetComponent<TavernOnMap>();
+    }
+
     //Initializes the game for each level.
     void InitGame()
     {
+        tavernRevealed = new Dictionary<int, bool>();
+        tavernHeroes = new Dictionary<int, List<Hero>>();
+
+        dataModel = GameObject.Find("DataModal");
+        dataModel.GetComponent<DataModal>().Load();
         TimeElapsed = 6;
         UpdateTimeDisplay();
+        var tavernData = dataModel.GetComponent<DataModal>().TavernData;
+        foreach (var data in tavernData)
+        {
+            var tavern = Instantiate(tavernPrefab);
+            tavern.types = data.Heroes.ToArray();
+            tavern.averageLevel = data.AveragePowerLevel;
+            tavern.transform.position = new Vector3((float)data.PosX, (float)data.PosY, 0);
+            tavern.id = data.TavernID;
+        }
     }
 
     private void UpdateTimeDisplay()
@@ -62,5 +93,36 @@ public class GameManager : MonoBehaviour
     {
         TimeElapsed += time;
         UpdateTimeDisplay();
+    }
+
+    public void SaveStateOfMap()
+    {
+        tavernHeroes = new Dictionary<int, List<Hero>>();
+        tavernRevealed = new Dictionary<int, bool>();
+        posHerald = FindObjectOfType<MovingPlayer>().transform.position;
+        TavernOnMap[] tavernOnMap = FindObjectsOfType<TavernOnMap>();
+        foreach (var tav in tavernOnMap)
+        {
+            tavernRevealed.Add(tav.id, tav.Revealed);
+            tavernHeroes.Add(tav.id, tav.heroes);
+        }
+    }
+
+    public void LoadStateOfMap()
+    {
+        UpdateTimeDisplay();
+        FindObjectOfType<MovingPlayer>().transform.position = posHerald;
+        var tavernData = dataModel.GetComponent<DataModal>().TavernData;
+        for (int i = 0; i < tavernData.Count; i++)
+        {
+            var data = tavernData[i];
+            var tavern = Instantiate(tavernPrefab);
+            tavern.types = data.Heroes.ToArray();
+            tavern.averageLevel = data.AveragePowerLevel;
+            tavern.transform.position = new Vector3((float)data.PosX, (float)data.PosY, 0);
+            tavern.heroes = tavernHeroes[tavernData[i].TavernID];
+            tavern.Revealed = tavernRevealed[tavernData[i].TavernID];
+            tavern.id = data.TavernID;
+        }
     }
 }

@@ -12,13 +12,7 @@ public enum Types
     any,
     filled,
 }
-[System.Serializable]
-public class Hero
-{
-    public Types type;
-    public int power = 0;
-    public int cost = 0;
-}
+
 public class DragCard : MonoBehaviour
 {
 
