@@ -57,6 +57,7 @@ public class MovingPlayer : MonoBehaviour {
             var castle = destObj.GetComponent<Castle>();
             if (castle != null)
             {
+                //manager.NextMission();
                 castle.OnArrival();
             }
         }
