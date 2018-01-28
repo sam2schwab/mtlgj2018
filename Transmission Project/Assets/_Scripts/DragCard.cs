@@ -34,7 +34,7 @@ public class DragCard : MonoBehaviour
     void Start()
     {
         originalPosition = transform.position;
-        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+        manager = GameObject.FindObjectOfType<Manager>();
         powerText = transform.GetChild(0).gameObject.GetComponent<TextMesh>();
         costText = transform.GetChild(1).gameObject.GetComponent<TextMesh>();
         powerText.text = "Power: " + self.power.ToString();

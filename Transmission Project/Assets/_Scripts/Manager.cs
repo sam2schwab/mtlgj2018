@@ -9,12 +9,11 @@ public class Manager : MonoBehaviour
     public int resources;
     public int startingResources = 3;
     public Text text;
-    public int nbOfHeroes = 0;
     public GameObject[] quests;
     private List<DataModal.Quest> questsData;
     // Use this for initialization
 
-    void Awake()
+    void Start()
     {
         questsData = FindObjectOfType<TransmissionManager>().activeQuests;
         foreach (GameObject item in quests)
@@ -28,14 +27,9 @@ public class Manager : MonoBehaviour
             quests[i].GetComponent<Quests>().UpdateIcons();
             quests[i].GetComponent<Quests>().difficulty = questsData[i].RequiredLevel;
             quests[i].GetComponent<Quests>().questObj = questsData[i];
+            quests[i].GetComponent<Quests>().init();
+            resources = startingResources;
         }
-    }
-
-    void Start()
-    {
-        resources = startingResources;
-        nbOfHeroes = FindObjectOfType<CardsSpawner>().tavernHeroes.Count;
-        
     }
 
     // Update is called once per frame
