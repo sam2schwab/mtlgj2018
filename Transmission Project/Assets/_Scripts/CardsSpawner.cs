@@ -25,9 +25,9 @@ public class CardsSpawner : MonoBehaviour
         {
             GameObject go = Instantiate(cardPrefab, transform) as GameObject;
             go.transform.position = new Vector3(transform.position.x + i * offsetX, transform.position.y, transform.position.z);
-            go.GetComponent<DragCard>().type = tavernHeroes[i].type;
-            go.GetComponent<DragCard>().power = tavernHeroes[i].power;
-            go.GetComponent<DragCard>().cost = tavernHeroes[i].cost;
+            go.GetComponent<DragCard>().self.type = tavernHeroes[i].type;
+            go.GetComponent<DragCard>().self.power = tavernHeroes[i].power;
+            go.GetComponent<DragCard>().self.cost = tavernHeroes[i].cost;
         }
     }
 

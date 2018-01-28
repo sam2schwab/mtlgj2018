@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Quests : MonoBehaviour
@@ -11,24 +12,26 @@ public class Quests : MonoBehaviour
     public Sprite spriteDagger;
     public Sprite spriteHat;
     public Sprite spriteEmpty;
-
-    public GameObject checkmark;
-
-    const string DIFFICULTY_BASE_TEXT = "Diff: ";
+    public Sprite checkmark;
 
     public GameObject[] classes;
+    public GameObject[] checkmarks;
 
     public int difficulty;
 
-    public TextMesh difficultyText;
+    public Text difficultyText;
+    public Text timeText;
+    public Text rewardText;
+    public Text penaltyText;
 
     // Use this for initialization
     void Start()
     {
-        difficultyText.text = DIFFICULTY_BASE_TEXT + difficulty.ToString();
+        difficultyText.text =  difficulty.ToString();
         for (int i = 0; i < classes.Length; i++)
         {
-            classes[i].GetComponent<SpriteRenderer>().sprite = spriteEmpty;
+            classes[i].GetComponent<Image>().sprite = spriteEmpty;
+            checkmarks[i].GetComponent<Image>().sprite = spriteEmpty;
         }
         for (int i = 0; i < types.Length; i++)
         {
@@ -48,7 +51,7 @@ public class Quests : MonoBehaviour
                     toAssign = spriteHat;
                     break;
             }
-            classes[i].GetComponent<SpriteRenderer>().sprite = toAssign;
+            classes[i].GetComponent<Image>().sprite = toAssign;
         }
     }
 
@@ -65,14 +68,15 @@ public class Quests : MonoBehaviour
         }
         else
             difficulty = 0;
-        difficultyText.text = DIFFICULTY_BASE_TEXT + difficulty.ToString();
+        difficultyText.text = difficulty.ToString();
         for (int i = 0; i < types.Length; i++)
         {
             if (t == types[i] || types[i] == Types.any)
             {
                 types[i] = Types.filled;
-                GameObject go = Instantiate(checkmark, classes[i].transform) as GameObject;
-                go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y, go.transform.position.z - 0.1f);
+                checkmarks[i].GetComponent<Image>().sprite = checkmark;
+                //GameObject go = Instantiate(checkmark, classes[i].transform) as GameObject;
+                //go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y, go.transform.position.z - 0.1f);
             }
         }
     }

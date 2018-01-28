@@ -26,4 +26,8 @@ public class Manager : MonoBehaviour {
         resources = resources - cost;
         text.text = resources.ToString()+" / " + startingResources.ToString();
     }
+    public void test(int a, int b)
+    {
+
+    }
 }

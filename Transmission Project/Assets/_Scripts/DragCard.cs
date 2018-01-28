@@ -12,23 +12,29 @@ public enum Types
     any,
     filled,
 }
-
-public class DragCard : MonoBehaviour
+[System.Serializable]
+public class Hero
 {
     public Types type;
     public int power = 0;
     public int cost = 0;
+}
+public class DragCard : MonoBehaviour
+{
+
     bool isSelected = false;
     Vector3 originalPosition;
     Manager manager;
     TextMesh powerText;
     TextMesh costText;
 
+    public Hero self;
     public Sprite spriteBow;
     public Sprite spriteSword;
     public Sprite spriteDagger;
     public Sprite spriteHat;
     public Sprite spriteEmpty;
+
 
     // Use this for initialization
     void Start()
@@ -37,11 +43,11 @@ public class DragCard : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
         powerText = transform.GetChild(0).gameObject.GetComponent<TextMesh>();
         costText = transform.GetChild(1).gameObject.GetComponent<TextMesh>();
-        powerText.text = "Power: " + power.ToString();
-        costText.text = "Cost: " + cost.ToString();
+        powerText.text = "Power: " + self.power.ToString();
+        costText.text = "Cost: " + self.cost.ToString();
 
         Sprite toAssign = spriteEmpty;
-        switch (type)
+        switch (self.type)
         {
             case Types.knight:
                 toAssign = spriteSword;
@@ -57,7 +63,6 @@ public class DragCard : MonoBehaviour
                 break;
         }
         transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>().sprite = toAssign;
-        Debug.Log(type.ToString());
     }
 
     // Update is called once per frame
@@ -72,14 +77,14 @@ public class DragCard : MonoBehaviour
                 isSelected = false;
 
                 RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, LayerMask.GetMask("Quests"));
-
                 if (hit.collider != null)
                 {
-                    Quests quest = hit.transform.gameObject.GetComponent<Quests>();
-                    if (quest.ValidateType(type) && manager.ValidateCost(cost))
+                    TriggerQuest tq = hit.transform.gameObject.GetComponent<TriggerQuest>();
+                    //Quests quest = hit.transform.gameObject.GetComponent<Quests>();
+                    if (tq.ValidateType(self.type) && manager.ValidateCost(self.cost))
                     {
-                        manager.PayCost(cost);
-                        quest.AssignHero(type, power);
+                        manager.PayCost(self.cost);
+                        tq.AssignHero(self.type, self.power);
                         Destroy(this.gameObject);
                     }
                     else
@@ -99,11 +104,4 @@ public class DragCard : MonoBehaviour
     {
         isSelected = true;
     }
-    //void OnMouseExit()
-    //{
-    //    if (!Input.GetMouseButton(0))
-    //    {
-    //        isSelected = false;
-    //    }
-    //}
 }
