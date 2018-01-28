@@ -42,7 +42,7 @@ public class Quests : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    public void init()
     {
         rewardText.text = questObj.Healing.ToString();
         penaltyText.text = questObj.Punishement.ToString();
@@ -86,7 +86,6 @@ public class Quests : MonoBehaviour
     {
         for (int i = 0; i < types.Length; i++)
         {
-            Debug.Log(types[i].ToString());
             if (t == types[i] || types[i] == Types.any)
             {
                 return true;
@@ -130,7 +129,6 @@ public class Quests : MonoBehaviour
         }
         if (questObj != null && CurrentPower >= difficulty)
         {
-            Debug.Log("works");
             powerCheckmark.GetComponent<Image>().enabled = true;
         }
     }
