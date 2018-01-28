@@ -7,7 +7,7 @@ using UnityEngine;
 public class DataModal : MonoBehaviour {
 
     
-    public List<Mission> MissionsData;
+    public List<Quest> MissionsData;
     public TextAsset MissionCSVFile;
     public TextAsset TavernCSVFile;
     public List<Tavern> TavernData;
@@ -41,7 +41,7 @@ public class DataModal : MonoBehaviour {
 
     public void Load()
     {
-        MissionsData = new List<Mission>();
+        MissionsData = new List<Quest>();
         TavernData = new List<Tavern>();
         InitiateTavern();
         InitiateMissions();
@@ -105,10 +105,12 @@ public class DataModal : MonoBehaviour {
         {
             if (i != 0)
             {
-                string[] Missioncharac = lines[i].Split(',');  
-                int Id = System.Int32.Parse(Missioncharac[0]);
-                int Power = System.Int32.Parse(Missioncharac[9]);
-                int NbOfTurn = System.Int32.Parse(Missioncharac[10]);
+                string[] Missioncharac = lines[i].Split(',');
+                int MissionId = System.Int32.Parse(Missioncharac[0]);
+                int QuestId = System.Int32.Parse(Missioncharac[1]);
+                int Power = System.Int32.Parse(Missioncharac[10]);
+                int Healing = System.Int32.Parse(Missioncharac[11]);
+                int Punishement = System.Int32.Parse(Missioncharac[12]);
                 List<Types> HeroesType = new List<Types>();
                 for (int j =0; j < Missioncharac.Length; j++)
                 {
@@ -131,33 +133,63 @@ public class DataModal : MonoBehaviour {
                             break;
                     }
                 }
-                MissionsData.Add(new Mission(HeroesType.Count, Id, HeroesType.ToArray(), Power, NbOfTurn));
+                MissionsData.Add(new Quest(HeroesType.Count, MissionId,QuestId, HeroesType.ToArray(), Power, Healing, Punishement));
             }
         }
     }
-    public class Mission
+    public int GetMissionHealing(int MissionId)
+    {
+        int TotalHealing = 0;
+        for (int i =0; i <  MissionsData.Count; i++)
+        {
+            if(MissionsData[i].MissionID == MissionId)
+            {
+                TotalHealing = TotalHealing + MissionsData[i].Healing;
+            }
+        }
+        return TotalHealing;
+    }
+    public List<Quest> GetAllQuestForAMission(int MissionId)
+    {
+        List<Quest> QuestToReturn = new List<Quest>();
+        for (int i = 0; i < MissionsData.Count; i++)
+        {
+            if (MissionsData[i].MissionID == MissionId)
+            {
+                QuestToReturn.Add(MissionsData[i]);
+            }
+        }
+        return QuestToReturn;
+    }
+
+    public class Quest
     {
         public int NbHeros;
-        public int MissionID;
+        public int QuestID;
         public Types[] HeroesRequired;
         public int MissionLevel;
-        public int NbOfTurn;
+        public int Healing;
+        public int MissionID;
+        public int Punishement;
 
-        public Mission()
+        public Quest()
         {
             NbHeros = 0;
-            MissionID = 0;
+            QuestID = 0;
             HeroesRequired = new Types[NbHeros];
             MissionLevel = 0;
-            NbOfTurn = 0;
+            Healing = 0;
+            Punishement = 0;
         }
-        public Mission(int NbHeroes, int ClassId, Types[] HeroesRequired, int MissionLevel, int NumberOfTurn)
+        public Quest(int NbHeroes,int MissionID, int QuestId, Types[] HeroesRequired, int MissionLevel, int Healing,int Punishement)
         {
             this.NbHeros = NbHeroes;
-            this.MissionID = ClassId;
+            this.QuestID = QuestId;
             this.HeroesRequired = HeroesRequired;
             this.MissionLevel = MissionLevel;
-            this.NbOfTurn = NumberOfTurn;
+            this.Healing = Healing;
+            this.Punishement = Punishement;
+            this.MissionID = MissionID;
         }
     }
     public class Tavern
@@ -168,6 +200,8 @@ public class DataModal : MonoBehaviour {
         public List<Types> Heroes;
         public int AveragePowerLevel;
         public int NumberOfHeroes;
+
+        
 
         public Tavern()
         {

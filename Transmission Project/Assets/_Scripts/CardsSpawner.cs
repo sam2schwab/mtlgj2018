@@ -5,24 +5,26 @@ using UnityEngine;
 
 public class CardsSpawner : MonoBehaviour
 {
-    public Hero[] tavernHeroes;
+    public List<Hero> tavernHeroes;
 
     public GameObject cardPrefab;
     public float offsetX;
     // Use this for initialization
+    void Awake()
+    {
+        tavernHeroes = FindObjectOfType<TransmissionManager>().currentTavern.heroes;
+    }
 
     void Start()
     {
-        tavernHeroes = FindObjectOfType<TransmissionManager>().currentTavern.heroes.ToArray();
-        FindObjectOfType<Manager>().nbOfHeroes = tavernHeroes.Length;
-        for (int i = 0; i < tavernHeroes.Length; i++)
+        //FindObjectOfType<Manager>().nbOfHeroes = tavernHeroes.Count;
+        for (int i = 0; i < tavernHeroes.Count; i++)
         {
             GameObject go = Instantiate(cardPrefab, transform) as GameObject;
             go.transform.position = new Vector3(transform.position.x + i * offsetX, transform.position.y, transform.position.z);
-            go.GetComponent<DragCard>().self.type = tavernHeroes[i].type;
-            go.GetComponent<DragCard>().self.power = tavernHeroes[i].power;
-            go.GetComponent<DragCard>().self.cost = tavernHeroes[i].cost;
+            go.GetComponent<DragCard>().self = tavernHeroes[i];
         }
+        //FindObjectOfType<Manager>().nbOfHeroes = tavernHeroes.Count;
     }
 
     // Update is called once per frame
