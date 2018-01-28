@@ -52,8 +52,8 @@ public class Quests : MonoBehaviour
             classes[i].GetComponent<Image>().sprite = spriteEmpty;
             checkmarks[i].GetComponent<Image>().sprite = spriteEmpty;
         }
-        UpdateIcons();
         powerCheckmark.GetComponent<Image>().enabled = false;
+        UpdateIcons();
     }
 
     // Update is called once per frame
@@ -130,6 +130,7 @@ public class Quests : MonoBehaviour
         }
         if (questObj != null && CurrentPower >= difficulty)
         {
+            Debug.Log("works");
             powerCheckmark.GetComponent<Image>().enabled = true;
         }
     }
