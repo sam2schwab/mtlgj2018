@@ -282,9 +282,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\CardsSpawner.cs" />
+    <Compile Include="Assets\_Scripts\Castle.cs" />
     <Compile Include="Assets\_Scripts\ClickAndDragButton.cs" />
     <Compile Include="Assets\_Scripts\DataModal.cs" />
     <Compile Include="Assets\_Scripts\DragCard.cs" />
+    <Compile Include="Assets\_Scripts\EnableShadow.cs" />
     <Compile Include="Assets\_Scripts\Loader.cs" />
     <Compile Include="Assets\_Scripts\Manager.cs" />
     <Compile Include="Assets\_Scripts\MovingPlayer.cs" />

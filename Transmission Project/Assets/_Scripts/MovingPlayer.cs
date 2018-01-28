@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovingPlayer : MonoBehaviour {
 
@@ -8,10 +9,9 @@ public class MovingPlayer : MonoBehaviour {
 
     private bool moving;
     private AnimationCurve anim;
-    private Vector3 dest;
+    private Selectable destObj;
     private Vector3 movement;
     private float startTime;
-    private int currentCost;
 
 	// Use this for initialization
 	void Start () {
@@ -28,28 +28,48 @@ public class MovingPlayer : MonoBehaviour {
             if (t < 1.0f)
             {
                 float ratio = anim.Evaluate(t);
-                position = dest - movement * (1 - ratio);
+                position = destObj.transform.position - movement * (1 - ratio);
             }
             else
             {
-                position = dest; //1 or larger means we reached the end
+                position = destObj.transform.position; //1 or larger means we reached the end
                 moving = false;
-                FindObjectOfType<GameManager>().AddTimeElapsed(currentCost);
-                UpdateAllCosts();
+                OnArrival();
             }
             transform.position = position;
         }
 	}
 
-    public void MoveTo(Vector3 destination, int cost)
+    private void OnArrival()
+    {
+        var manager = FindObjectOfType<GameManager>();
+        var tavern = destObj.GetComponent<TavernOnMap>();
+        if (tavern != null)
+        {
+            manager.EnterTavern(destObj);
+            tavern.Revealed = true;
+            manager.SaveStateOfMap();
+            SceneManager.LoadScene("main");
+        }
+        else
+        {
+            var castle = destObj.GetComponent<Castle>();
+            if (castle != null)
+            {
+                castle.OnArrival();
+            }
+        }
+        UpdateAllCosts();
+    }
+
+    public void MoveTo(Selectable obj)
     {
         if (!moving)
         {
             moving = true;
             startTime = Time.time;
-            dest = destination;
-            movement = destination - transform.position;
-            currentCost = cost;
+            destObj = obj;
+            movement = destObj.transform.position - transform.position;
         }
 
     }

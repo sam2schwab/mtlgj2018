@@ -5,6 +5,7 @@ public class Loader : MonoBehaviour
 {
     public GameObject gameManager;          //GameManager prefab to instantiate.
     public GameObject soundManager;         //SoundManager prefab to instantiate.
+    public TavernOnMap tavernPrefab;
 
 
     void Awake()
@@ -14,6 +15,11 @@ public class Loader : MonoBehaviour
         {
             //Instantiate gameManager prefab
             Instantiate(gameManager);
+            gameManager.GetComponent<GameManager>().tavernPrefab = tavernPrefab;
+        }
+        else
+        {
+           GameManager.instance.LoadStateOfMap();
         }
 
         //Check if a SoundManager has already been assigned to static variable GameManager.instance or if it's still null

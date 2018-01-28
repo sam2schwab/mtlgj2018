@@ -113,52 +113,124 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &286919493
-Prefab:
+--- !u!1 &91856329
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -4.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676583416873528, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_Name
-      value: Tavern (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-  m_IsPrefabParent: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 91856331}
+  - component: {fileID: 91856330}
+  m_Layer: 0
+  m_Name: unknown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &91856330
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 91856329}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 6c33d095151f9d9439bec0183c9ce2ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.86, y: 2.71}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+--- !u!4 &91856331
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 91856329}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.4114923, y: 3.1487956, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &307024340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 307024342}
+  - component: {fileID: 307024341}
+  m_Layer: 0
+  m_Name: Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &307024341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 307024340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50eb721e83e02a42a6d4724954f0d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1991756369827776, guid: b6c1da4d50e4a5b4494b09853823312c,
+    type: 2}
+  soundManager: {fileID: 0}
+  tavernPrefab: {fileID: 114345238892438570, guid: 3d6630bd70015864290a9102932721e0,
+    type: 2}
+--- !u!4 &307024342
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 307024340}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 0.01, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391811598
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +242,7 @@ GameObject:
   - component: {fileID: 391811599}
   - component: {fileID: 391811601}
   - component: {fileID: 391811602}
+  - component: {fileID: 391811603}
   m_Layer: 0
   m_Name: castle
   m_TagString: Destination
@@ -232,7 +305,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &391811601
 MonoBehaviour:
@@ -270,6 +343,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.8, y: 4.8}
   m_EdgeRadius: 0
+--- !u!114 &391811603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391811598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6459c9b89813174a938e5d16e7b32ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &544903155
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +365,7 @@ GameObject:
   - component: {fileID: 544903158}
   - component: {fileID: 544903157}
   m_Layer: 5
-  m_Name: text
+  m_Name: timeElapsed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,10 +384,10 @@ RectTransform:
   m_Father: {fileID: 1297866645}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 352.2, y: 186.8}
-  m_SizeDelta: {x: 106.7, y: 27.8}
+  m_AnchorMin: {x: 0.8298963, y: 0.90863603}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.07501221, y: -0.049987793}
+  m_SizeDelta: {x: 0.14996, y: 0.10003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544903157
 MonoBehaviour:
@@ -328,10 +412,10 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -344,52 +428,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 544903155}
---- !u!1001 &743525655
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -4.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676583416873528, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_Name
-      value: Tavern (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &770791721
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,100 +499,8 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &798683273
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676583416873528, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_Name
-      value: Tavern (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &972664954
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.010293037
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.8791375
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676583416873528, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_Name
-      value: Tavern (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1025382844
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +573,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1025382847
 MonoBehaviour:
@@ -640,52 +586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2468bf0b3f1124e9038517a7c6d501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1207694466
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676583416873528, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_Name
-      value: tavern
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1261603355
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +754,7 @@ RectTransform:
   m_Children:
   - {fileID: 544903156}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -921,96 +821,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1758986862
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.42017615
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.0795524
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1801435796
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -7.9745927
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.647819
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826841410322290, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676583416873528, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-      propertyPath: m_Name
-      value: Tavern (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3d6630bd70015864290a9102932721e0, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &2033823280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d576dd63ba3d9054fa737c83c82dfe89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionCSVFile: {fileID: 4900000, guid: 1c65d8d6db2613c4494eb8b149fc8dfa, type: 3}
+  MissionCSVFile: {fileID: 4900000, guid: 3f6032760d2929f43a90375d6d39d651, type: 3}
+  TavernCSVFile: {fileID: 4900000, guid: c18c03ba903b05a4fb08c1912286a251, type: 3}
 --- !u!4 &2033823282
 Transform:
   m_ObjectHideFlags: 0
@@ -1050,5 +863,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

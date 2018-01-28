@@ -875,7 +875,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1293303851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1663064756}
+        m_MethodName: ExitToMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1293303851
@@ -951,16 +962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30484c6c5fe3a54390ccb2c4c3b3a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tavernHeroes:
-  - type: 0
-    cost: 0
-    power: 2
-  - type: 1
-    cost: 0
-    power: 1
-  - type: 2
-    cost: 0
-    power: 3
   cardPrefab: {fileID: 1678290267090858, guid: 5e05d14374c3d1a4a90b198fef5f4e66, type: 2}
   offsetX: 3
 --- !u!1 &1497151830

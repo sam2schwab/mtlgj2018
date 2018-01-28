@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/zooSam.unity
+    guid: ea47aafd01de9264f940a374802a807d
+  - enabled: 1
+    path: Assets/main.unity
+    guid: 8836b34507233294c913fc464102dba0

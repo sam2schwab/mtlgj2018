@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
     public int resources;
@@ -25,5 +26,9 @@ public class Manager : MonoBehaviour {
     {
         resources = resources - cost;
         text.text = resources.ToString()+" / " + startingResources.ToString();
+    }
+    public void ExitToMap()
+    {
+        SceneManager.LoadScene("zooSam");
     }
 }

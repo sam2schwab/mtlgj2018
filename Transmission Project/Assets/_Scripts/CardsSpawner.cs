@@ -11,16 +11,10 @@ public class CardsSpawner : MonoBehaviour
     public float offsetX;
     // Use this for initialization
 
-    [System.Serializable]
-    public class Hero
-    {
-        public Types type;
-        public int cost;
-        public int power;
-    }
-
     void Start()
     {
+        tavernHeroes = FindObjectOfType<GameManager>().currentTavern.heroes.ToArray();
+        FindObjectOfType<Manager>().nbOfHeroes = tavernHeroes.Length;
         for (int i = 0; i < tavernHeroes.Length; i++)
         {
             GameObject go = Instantiate(cardPrefab, transform) as GameObject;
@@ -36,4 +30,11 @@ public class CardsSpawner : MonoBehaviour
     {
 
     }
+}
+
+public class Hero
+{
+    public Types type;
+    public int cost;
+    public int power;
 }
