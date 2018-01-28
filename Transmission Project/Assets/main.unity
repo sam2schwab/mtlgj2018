@@ -1495,7 +1495,7 @@ MonoBehaviour:
   heroArcher: {fileID: 21300000, guid: 9c61cd1c82fbf0447b481762e921c662, type: 3}
   heroThief: {fileID: 21300000, guid: d08be2fad71044745a04c83c3a8de1a1, type: 3}
   heroMage: {fileID: 21300000, guid: f5d67baf84d3fd84490a6ceb195cb54e, type: 3}
-  heroesRequired: 3
+  heroesRequired: 4
 --- !u!1 &736669111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3088,17 +3088,6 @@ MonoBehaviour:
   startingResources: 3
   text: {fileID: 980116690}
   nbOfHeroes: 3
-  missions:
-  - types: 000000000000000000000000000000000000000000000000
-    power: 0
-    difficulty: 10
-    reward: 0
-    penalty: 0
-  - types: 030000000200000004000000
-    power: 0
-    difficulty: 4
-    reward: 0
-    penalty: 0
   quests:
   - {fileID: 133547613}
   - {fileID: 1364037864}
