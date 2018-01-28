@@ -42,11 +42,11 @@ public class MovingPlayer : MonoBehaviour {
 
     private void OnArrival()
     {
-        FindObjectOfType<ScriptSoundsManager>().PlayTrumpet();
         var manager = FindObjectOfType<TransmissionManager>();
         var tavern = destObj.GetComponent<TavernOnMap>();
         if (tavern != null)
         {
+            FindObjectOfType<ScriptSoundsManager>().PlayTrumpet();
             manager.EnterTavern(destObj);
             tavern.Revealed = true;
             manager.SaveStateOfMap();

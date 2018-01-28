@@ -4,40 +4,30 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[System.Serializable]
-public class Mission
-{
-    public Types[] types;
-    public int power = 0;
-    public int difficulty;
-    public int reward;
-    public int penalty;
-    //public bool readyToClaim = false;
-}
-
 public class Manager : MonoBehaviour
 {
     public int resources;
     public int startingResources = 3;
     public Text text;
     public int nbOfHeroes = 0;
-    public Mission[] missions;
     public GameObject[] quests;
+    private List<DataModal.Quest> questsData;
     // Use this for initialization
 
     void Awake()
     {
+        questsData = FindObjectOfType<TransmissionManager>().activeQuests;
         foreach (GameObject item in quests)
         {
             item.SetActive(false);
         }
-        for (int i = 0; i < missions.Length; i++)
+        for (int i = 0; i < questsData.Count; i++)
         {
             quests[i].SetActive(true);
-            quests[i].GetComponent<Quests>().types = missions[i].types;
+            quests[i].GetComponent<Quests>().types = questsData[i].HeroesRequired;
             quests[i].GetComponent<Quests>().UpdateIcons();
-            quests[i].GetComponent<Quests>().difficulty = missions[i].difficulty;
-            quests[i].GetComponent<Quests>().currentPower = missions[i].power;
+            quests[i].GetComponent<Quests>().difficulty = questsData[i].RequiredLevel;
+            quests[i].GetComponent<Quests>().questObj = questsData[i];
         }
     }
 

@@ -7,7 +7,10 @@ using System;
 
 public class TransmissionManager : MonoBehaviour
 {
-    private GameObject dataModel;
+    private DataModal dataModel;
+
+    private int missionNumber;
+    public List<DataModal.Quest> activeQuests;
 
     public TavernOnMap tavernPrefab;
 
@@ -58,8 +61,10 @@ public class TransmissionManager : MonoBehaviour
         tavernRevealed = new Dictionary<int, bool>();
         tavernHeroes = new Dictionary<int, List<Hero>>();
 
-        dataModel = GameObject.Find("DataModal");
-        dataModel.GetComponent<DataModal>().Load();
+        dataModel = GameObject.Find("DataModal").GetComponent<DataModal>();
+        dataModel.Load();
+        missionNumber = 1;
+        activeQuests = dataModel.GetAllQuestForAMission(missionNumber);
         TimeElapsed = 6;
         UpdateTimeDisplay();
         var tavernData = dataModel.GetComponent<DataModal>().TavernData;

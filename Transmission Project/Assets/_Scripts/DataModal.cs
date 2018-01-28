@@ -167,7 +167,8 @@ public class DataModal : MonoBehaviour {
         public int NbHeros;
         public int QuestID;
         public Types[] HeroesRequired;
-        public int MissionLevel;
+        public int RequiredLevel;
+        public int CurrentLevel;
         public int Healing;
         public int MissionID;
         public int Punishement;
@@ -177,16 +178,17 @@ public class DataModal : MonoBehaviour {
             NbHeros = 0;
             QuestID = 0;
             HeroesRequired = new Types[NbHeros];
-            MissionLevel = 0;
+            RequiredLevel = 0;
             Healing = 0;
             Punishement = 0;
+            CurrentLevel = 0;
         }
         public Quest(int NbHeroes,int MissionID, int QuestId, Types[] HeroesRequired, int MissionLevel, int Healing,int Punishement)
         {
             this.NbHeros = NbHeroes;
             this.QuestID = QuestId;
             this.HeroesRequired = HeroesRequired;
-            this.MissionLevel = MissionLevel;
+            this.RequiredLevel = MissionLevel;
             this.Healing = Healing;
             this.Punishement = Punishement;
             this.MissionID = MissionID;

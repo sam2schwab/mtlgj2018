@@ -15,22 +15,36 @@ public class Quests : MonoBehaviour
     public Sprite spriteEmpty;
     public Sprite checkmark;
 
+    public DataModal.Quest questObj;
+
     public GameObject[] classes;
     public GameObject[] checkmarks;
 
     public GameObject powerCheckmark;
 
     public int difficulty;
-    public int currentPower;
 
     public Text difficultyText;
     public Text rewardText;
     public Text penaltyText;
 
+    public int CurrentPower
+    {
+        get
+        {
+            return questObj.CurrentLevel;
+        }
+
+        set
+        {
+            questObj.CurrentLevel = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
-        difficultyText.text = currentPower.ToString() + "/" + difficulty.ToString();
+        difficultyText.text = CurrentPower.ToString() + "/" + difficulty.ToString();
         for (int i = 0; i < classes.Length; i++)
         {
             classes[i].GetComponent<Image>().sprite = spriteEmpty;
@@ -47,12 +61,12 @@ public class Quests : MonoBehaviour
     }
     public void AssignHero(Types t, int power)
     {
-        currentPower = currentPower + power;
-        if (currentPower >= difficulty)
+        CurrentPower = CurrentPower + power;
+        if (CurrentPower >= difficulty)
         {
             powerCheckmark.GetComponent<Image>().enabled = true;
         }
-        difficultyText.text = currentPower.ToString() + "/" + difficulty.ToString();
+        difficultyText.text = CurrentPower.ToString() + "/" + difficulty.ToString();
         for (int i = 0; i < types.Length; i++)
         {
             if (t == types[i] || types[i] == Types.any)
