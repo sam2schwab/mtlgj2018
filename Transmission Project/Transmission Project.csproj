@@ -294,6 +294,7 @@
     <Compile Include="Assets\_Scripts\Quests.cs" />
     <Compile Include="Assets\_Scripts\Selectable.cs" />
     <Compile Include="Assets\_Scripts\TavernOnMap.cs" />
+    <Compile Include="Assets\_Scripts\TriggerQuest.cs" />
     <Compile Include="Assets\GameManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

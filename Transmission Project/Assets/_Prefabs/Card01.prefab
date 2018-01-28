@@ -218,7 +218,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.8, y: 3.4}
+    oldSize: {x: 6.78, y: 2.63}
     newSize: {x: 6.8, y: 3.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -280,9 +280,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b772f167087ab384fa12c5a295139362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  power: 1
-  cost: 2
+  self:
+    type: 0
+    power: 2
+    cost: 0
   spriteBow: {fileID: 21300000, guid: 157a58427ef928145ac1403f55a5b9b6, type: 3}
   spriteSword: {fileID: 21300000, guid: 8f4fb068d6e2706488590ddfec4ad8b6, type: 3}
   spriteDagger: {fileID: 21300000, guid: f6823d990f6c6a1478b25f1bb22e9279, type: 3}
