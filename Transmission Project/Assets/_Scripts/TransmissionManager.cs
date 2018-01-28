@@ -55,6 +55,12 @@ public class TransmissionManager : MonoBehaviour
         currentTavern = tavern.GetComponent<TavernOnMap>();
     }
 
+    internal void NextMission()
+    {
+        missionNumber++;
+        activeQuests = dataModel.GetAllQuestForAMission(missionNumber);
+    }
+
     //Initializes the game for each level.
     void InitGame()
     {
@@ -68,13 +74,12 @@ public class TransmissionManager : MonoBehaviour
         TimeElapsed = 6;
         UpdateTimeDisplay();
         var tavernData = dataModel.GetComponent<DataModal>().TavernData;
-        foreach (var data in tavernData)
+        var tavernsOnMap = FindObjectsOfType<TavernOnMap>();
+        foreach (var tavern in tavernsOnMap)
         {
-            var tavern = Instantiate(tavernPrefab);
+            var data = dataModel.TavernData.Find(x => x.TavernID == tavern.id);
             tavern.types = data.Heroes.ToArray();
             tavern.averageLevel = data.AveragePowerLevel;
-            tavern.transform.position = new Vector3((float)data.PosX, (float)data.PosY, 0);
-            tavern.id = data.TavernID;
         }
     }
 
@@ -117,17 +122,15 @@ public class TransmissionManager : MonoBehaviour
     {
         UpdateTimeDisplay();
         FindObjectOfType<MovingPlayer>().transform.position = posHerald;
+        var tavernsOnMap = FindObjectsOfType<TavernOnMap>();
         var tavernData = dataModel.GetComponent<DataModal>().TavernData;
-        for (int i = 0; i < tavernData.Count; i++)
+        foreach (var tavern in tavernsOnMap)
         {
-            var data = tavernData[i];
-            var tavern = Instantiate(tavernPrefab);
+            var data = dataModel.TavernData.Find(x => x.TavernID == tavern.id);
             tavern.types = data.Heroes.ToArray();
             tavern.averageLevel = data.AveragePowerLevel;
-            tavern.transform.position = new Vector3((float)data.PosX, (float)data.PosY, 0);
-            tavern.heroes = tavernHeroes[tavernData[i].TavernID];
-            tavern.Revealed = tavernRevealed[tavernData[i].TavernID];
-            tavern.id = data.TavernID;
+            tavern.heroes = tavernHeroes[tavern.id];
+            tavern.Revealed = tavernRevealed[tavern.id];
         }
     }
 }

@@ -297,6 +297,7 @@
     <Compile Include="Assets\_Scripts\TavernOnMap.cs" />
     <Compile Include="Assets\_Scripts\TransmissionManager.cs" />
     <Compile Include="Assets\_Scripts\TriggerQuest.cs" />
+    <Compile Include="Assets\ResizeBackground.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
