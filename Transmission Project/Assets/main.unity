@@ -1009,7 +1009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb163102682a6f4469d22a14588e5e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   cardPrefab: {fileID: 1678290267090858, guid: 5e05d14374c3d1a4a90b198fef5f4e66, type: 2}
   offsetX: 3
 --- !u!1 &1497151830
@@ -1029,10 +1028,8 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!212 &1497151831
-=======
   questToTrigger: {fileID: 741156365}
 --- !u!212 &525591397
->>>>>>> ad2a00d7f106c7668a084083b9c155b4cbbfcd5b
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
