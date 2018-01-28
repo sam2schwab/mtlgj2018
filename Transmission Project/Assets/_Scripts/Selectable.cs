@@ -5,12 +5,15 @@ using UnityEngine;
 public class Selectable : MonoBehaviour {
 
     GameObject player;
+    GameObject MySoundManager;
     private int cost;
 
 	// Use this for initialization
 	void Start () {
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
+        if (MySoundManager == null)
+            MySoundManager = GameObject.Find("SoundManager");
         UpdateCost();
 	}
 	
@@ -32,6 +35,7 @@ public class Selectable : MonoBehaviour {
     private void OnMouseDown()
     {
         player.GetComponent<MovingPlayer>().MoveTo(transform.position, cost);
+        MySoundManager.GetComponent<ScriptSoundsManager>().PlayTrumpet();
     }
 
     private int CalculateCost()

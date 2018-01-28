@@ -40,7 +40,6 @@ public class DataModal : MonoBehaviour {
         TavernData = new List<Tavern>();
         InitiateTavern();
         InitiateMissions();
-        int i = 0;
     }
 	
 	// Update is called once per frame
@@ -104,6 +103,7 @@ public class DataModal : MonoBehaviour {
                 string[] Missioncharac = lines[i].Split(',');  
                 int Id = System.Int32.Parse(Missioncharac[0]);
                 int Power = System.Int32.Parse(Missioncharac[9]);
+                int NbOfTurn = System.Int32.Parse(Missioncharac[10]);
                 List<Types> HeroesType = new List<Types>();
                 for (int j =0; j < Missioncharac.Length; j++)
                 {
@@ -126,7 +126,7 @@ public class DataModal : MonoBehaviour {
                             break;
                     }
                 }
-                MissionsData.Add(new Mission(HeroesType.Count, Id, HeroesType.ToArray(), Power));
+                MissionsData.Add(new Mission(HeroesType.Count, Id, HeroesType.ToArray(), Power, NbOfTurn));
             }
         }
     }
@@ -136,6 +136,7 @@ public class DataModal : MonoBehaviour {
         public int MissionID;
         public Types[] HeroesRequired;
         public int MissionLevel;
+        public int NbOfTurn;
 
         public Mission()
         {
@@ -143,13 +144,15 @@ public class DataModal : MonoBehaviour {
             MissionID = 0;
             HeroesRequired = new Types[NbHeros];
             MissionLevel = 0;
+            NbOfTurn = 0;
         }
-        public Mission(int NbHeroes, int ClassId, Types[] HeroesRequired, int MissionLevel)
+        public Mission(int NbHeroes, int ClassId, Types[] HeroesRequired, int MissionLevel, int NumberOfTurn)
         {
             this.NbHeros = NbHeroes;
             this.MissionID = ClassId;
             this.HeroesRequired = HeroesRequired;
             this.MissionLevel = MissionLevel;
+            this.NbOfTurn = NumberOfTurn;
         }
     }
     public class Tavern
@@ -177,7 +180,7 @@ public class DataModal : MonoBehaviour {
             this.PosY = PosY;
             this.Heroes = Heroes;
             this.AveragePowerLevel = AveragePowerLevel;
-            this.NumberOfHeroes = NumberOfHeroes;
+            this.NumberOfHeroes = NumberOfHeroes;          
         }
     }
 }
