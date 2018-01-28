@@ -88,7 +88,7 @@ public class TransmissionManager : MonoBehaviour
         int jour = TimeElapsed / 24 + 1;
         int heure = TimeElapsed % 24;
         string timeDisplay = string.Format("Day {0}, {1}h00", jour, heure);
-        FindObjectOfType<Canvas>().transform.Find("timeElapsed").gameObject.GetComponent<Text>().text = timeDisplay;
+        FindObjectOfType<Canvas>().transform.Find("Life").Find("textTime").gameObject.GetComponent<Text>().text = timeDisplay;
     }
 
 

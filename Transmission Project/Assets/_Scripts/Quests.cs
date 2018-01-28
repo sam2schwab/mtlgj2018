@@ -44,14 +44,16 @@ public class Quests : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        rewardText.text = questObj.Healing.ToString();
+        penaltyText.text = questObj.Punishement.ToString();
         difficultyText.text = CurrentPower.ToString() + "/" + difficulty.ToString();
         for (int i = 0; i < classes.Length; i++)
         {
             classes[i].GetComponent<Image>().sprite = spriteEmpty;
             checkmarks[i].GetComponent<Image>().sprite = spriteEmpty;
         }
-        UpdateIcons();
         powerCheckmark.GetComponent<Image>().enabled = false;
+        UpdateIcons();
     }
 
     // Update is called once per frame
@@ -118,12 +120,18 @@ public class Quests : MonoBehaviour
                     toAssign = spriteHat;
                     break;
                 case Types.any:
-                    {
-                        toAssign = spriteAny;
-                        break;
-                    }
+                    toAssign = spriteAny;
+                    break;
+                case Types.filled:
+                    toAssign = checkmark;
+                    break;
             }
             classes[i].GetComponent<Image>().sprite = toAssign;
+        }
+        if (questObj != null && CurrentPower >= difficulty)
+        {
+            Debug.Log("works");
+            powerCheckmark.GetComponent<Image>().enabled = true;
         }
     }
 }
