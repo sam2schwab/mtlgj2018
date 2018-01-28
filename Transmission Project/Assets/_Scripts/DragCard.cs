@@ -79,6 +79,7 @@ public class DragCard : MonoBehaviour
                     {
                         manager.PayCost(self.cost);
                         tq.AssignHero(self.type, self.power);
+                        FindObjectOfType<CardsSpawner>().tavernHeroes.Remove(self);
                         Destroy(this.gameObject);
                     }
                     else
