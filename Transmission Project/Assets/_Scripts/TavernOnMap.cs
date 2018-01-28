@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class TavernOnMap : MonoBehaviour {
 
+    private Color revealedColor = Color.white;
+    private Color hiddenColor = new Color(0.35f, 0.35f, 0.35f, 1);
 
     public Sprite spriteBow;
     public Sprite spriteSword;
@@ -48,6 +50,10 @@ public class TavernOnMap : MonoBehaviour {
 
     private void UpdateIcons()
     {
+        //update visibility
+        GetComponent<SpriteRenderer>().material.color = Revealed ? revealedColor : hiddenColor;
+
+        //update icons
         var typeArray = Revealed ? heroes.Select(x => x.type).ToArray() : types;
         var icons = transform.Find("_Icons").GetComponentsInChildren<SpriteRenderer>();
         for (int i = 0; i < icons.Length; i++)
