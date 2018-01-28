@@ -7,6 +7,8 @@ public class ScriptSoundsManager : MonoBehaviour {
     public AudioClip TrumpetClip;
     public AudioClip TrumpetClipVictory;
     public AudioClip TrumpetClipFail;
+    public AudioClip Hover;
+    public AudioClip Click;
 
     public static ScriptSoundsManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
@@ -14,6 +16,20 @@ public class ScriptSoundsManager : MonoBehaviour {
     void Start()
     {
 
+    }
+
+    public void PlayHover()
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = Hover;
+        audio.Play();
+    }
+
+    public void PlayClick()
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = Click;
+        audio.Play();
     }
 
     public void PlayTrumpet()

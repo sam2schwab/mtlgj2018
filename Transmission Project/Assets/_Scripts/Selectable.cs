@@ -26,17 +26,18 @@ public class Selectable : MonoBehaviour {
 
     private void OnMouseEnter()
     {
-        GetComponent<SpriteRenderer>().flipX = true;
+        FindObjectOfType<ScriptSoundsManager>().PlayHover();
+        GetComponent<SpriteRenderer>().transform.localScale *= 1.1f;
     }
 
     private void OnMouseExit()
     {
-        GetComponent<SpriteRenderer>().flipX = false;
+        GetComponent<SpriteRenderer>().transform.localScale /= 1.1f;
     }
 
     private void OnMouseDown()
     {
-        MySoundManager.GetComponent<ScriptSoundsManager>().PlayTrumpet();
+        FindObjectOfType<ScriptSoundsManager>().PlayClick();
         player.GetComponent<MovingPlayer>().MoveTo(this);
     }
 

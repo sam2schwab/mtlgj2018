@@ -5,7 +5,6 @@ public class Loader : MonoBehaviour
 {
     public GameObject gameManager;          //GameManager prefab to instantiate.
     public GameObject soundManager;         //SoundManager prefab to instantiate.
-    public TavernOnMap tavernPrefab;
 
 
     void Awake()
@@ -15,7 +14,6 @@ public class Loader : MonoBehaviour
         {
             //Instantiate gameManager prefab
             Instantiate(gameManager);
-            gameManager.GetComponent<TransmissionManager>().tavernPrefab = tavernPrefab;
         }
         else
         {
