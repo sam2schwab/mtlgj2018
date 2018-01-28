@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3e6bdf9e952fe5a4cbf364a8a51004ae
+timeCreated: 1517118688
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tavernPrefab: {fileID: 114345238892438570, guid: 3d6630bd70015864290a9102932721e0,
+      type: 2}
+  - currentTavern: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

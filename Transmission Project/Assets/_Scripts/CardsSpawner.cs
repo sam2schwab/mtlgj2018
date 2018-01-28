@@ -11,23 +11,17 @@ public class CardsSpawner : MonoBehaviour
     public float offsetX;
     // Use this for initialization
 
-    [System.Serializable]
-    public class Hero
-    {
-        public Types type;
-        public int cost;
-        public int power;
-    }
-
     void Start()
     {
+        tavernHeroes = FindObjectOfType<TransmissionManager>().currentTavern.heroes.ToArray();
+        FindObjectOfType<Manager>().nbOfHeroes = tavernHeroes.Length;
         for (int i = 0; i < tavernHeroes.Length; i++)
         {
             GameObject go = Instantiate(cardPrefab, transform) as GameObject;
             go.transform.position = new Vector3(transform.position.x + i * offsetX, transform.position.y, transform.position.z);
-            go.GetComponent<DragCard>().type = tavernHeroes[i].type;
-            go.GetComponent<DragCard>().power = tavernHeroes[i].power;
-            go.GetComponent<DragCard>().cost = tavernHeroes[i].cost;
+            go.GetComponent<DragCard>().self.type = tavernHeroes[i].type;
+            go.GetComponent<DragCard>().self.power = tavernHeroes[i].power;
+            go.GetComponent<DragCard>().self.cost = tavernHeroes[i].cost;
         }
     }
 
@@ -36,4 +30,11 @@ public class CardsSpawner : MonoBehaviour
     {
 
     }
+}
+
+public class Hero
+{
+    public Types type;
+    public int cost;
+    public int power;
 }

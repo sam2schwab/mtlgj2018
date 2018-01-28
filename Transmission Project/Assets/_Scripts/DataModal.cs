@@ -36,6 +36,11 @@ public class DataModal : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
+    }
+
+    public void Load()
+    {
         MissionsData = new List<Mission>();
         TavernData = new List<Tavern>();
         InitiateTavern();

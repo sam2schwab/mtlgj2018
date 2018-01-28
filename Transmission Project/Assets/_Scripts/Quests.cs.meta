@@ -1,11 +1,19 @@
 fileFormatVersion: 2
 guid: 4fd5562b8c097114b9cc765578ae811c
-timeCreated: 1517068094
+timeCreated: 1517106587
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spriteBow: {fileID: 21300000, guid: 157a58427ef928145ac1403f55a5b9b6, type: 3}
+  - spriteSword: {fileID: 21300000, guid: 8f4fb068d6e2706488590ddfec4ad8b6, type: 3}
+  - spriteDagger: {fileID: 21300000, guid: f6823d990f6c6a1478b25f1bb22e9279, type: 3}
+  - spriteHat: {fileID: 21300000, guid: bb372e33068bd8d4fa869ecb37bdce8a, type: 3}
+  - spriteEmpty: {fileID: 21300000, guid: 14a3a2aae18da0d44af717591cc0cf1c, type: 3}
+  - questUI: {instanceID: 0}
+  - checkmark: {instanceID: 0}
+  - difficultyText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -283,6 +283,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\CardsSpawner.cs" />
+    <Compile Include="Assets\_Scripts\Castle.cs" />
     <Compile Include="Assets\_Scripts\ClickAndDragButton.cs" />
     <Compile Include="Assets\_Scripts\DataModal.cs" />
     <Compile Include="Assets\_Scripts\DragCard.cs" />
@@ -293,8 +294,9 @@
     <Compile Include="Assets\_Scripts\Quests.cs" />
     <Compile Include="Assets\_Scripts\Selectable.cs" />
     <Compile Include="Assets\_Scripts\TavernOnMap.cs" />
-    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\TriggerQuest.cs" />
     <Compile Include="Assets\ScriptSoundsManager.cs" />
+    <Compile Include="Assets\TransmissionManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
