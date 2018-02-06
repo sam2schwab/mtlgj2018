@@ -50,4 +50,8 @@ public class Manager : MonoBehaviour
     {
         SceneManager.LoadScene("zooSam");
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
